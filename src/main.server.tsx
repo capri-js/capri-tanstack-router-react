@@ -1,16 +1,32 @@
-import { RenderFunction, renderToString } from "@capri-js/react/server";
 import { StrictMode } from "react";
-import { StaticRouter } from "react-router-dom/server.js";
+import { RenderFunction, renderToString } from "@capri-js/react/server";
+import { createMemoryHistory, RouterProvider } from "@tanstack/react-router";
 
-import { App } from "./App";
+import { createRouter } from "./router";
+
+async function getRouter(url: string) {
+  const router = createRouter();
+
+  router.reset();
+  const memoryHistory = createMemoryHistory({
+    initialEntries: [url],
+  });
+
+  router.update({
+    history: memoryHistory,
+  });
+
+  router.mount()(); // and unsubscribe immediately
+  return router;
+}
 
 export const render: RenderFunction = async (url: string) => {
+  const router = await getRouter(url);
+  await router.load();
   return {
     "#app": await renderToString(
       <StrictMode>
-        <StaticRouter location={url} basename={import.meta.env.BASE_URL}>
-          <App />
-        </StaticRouter>
+        <RouterProvider router={router} />
       </StrictMode>
     ),
   };

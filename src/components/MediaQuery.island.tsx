@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Box } from "./Box";
 
 export const options = {
   media: "(max-width:500px)",
@@ -11,5 +12,5 @@ export default function MediaQuery() {
   useEffect(() => {
     setContent("The island has been hydrated.");
   }, []);
-  return <div className="box">{content}</div>;
+  return <Box>{content}</Box>;
 }

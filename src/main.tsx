@@ -1,15 +1,15 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { createRouter } from "./router";
+import { RouterProvider } from "@tanstack/react-router";
 
-import { App } from "./App";
-import { PreviewBanner } from "./Preview.jsx";
+import { PreviewBanner } from "./components/PreviewBanner.jsx";
+
+const router = createRouter();
 
 ReactDOM.createRoot(document.getElementById("app")!).render(
   <StrictMode>
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <PreviewBanner />
-      <App />
-    </BrowserRouter>
+    <PreviewBanner />
+    <RouterProvider router={router} />
   </StrictMode>
 );

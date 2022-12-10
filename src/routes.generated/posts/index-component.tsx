@@ -1,0 +1,1 @@
+export const component = () => <div>Select a post.</div>;

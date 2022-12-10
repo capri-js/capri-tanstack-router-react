@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom";
-
-import CounterIsland from "./Counter.island.jsx";
-import ExpandableIsland from "./Expandable.island.jsx";
-import MediaQueryIsland from "./MediaQuery.island.jsx";
-import { ServerContent } from "./ServerContent";
-
-export function Home() {
-  return (
-    <main>
-      <h1>
-        Partial hydration with React and <i>Capri</i>
-      </h1>
+import { lazy } from '@tanstack/react-router';
+import { routeConfig as parentRouteConfig } from "./__root";
+import CounterIsland from "../components/Counter.island.jsx";
+import ExpandableIsland from "../components/Expandable.island.jsx";
+import MediaQueryIsland from "../components/MediaQuery.island.jsx";
+import { ServerContent } from "../components/ServerContent";
+const routeConfig = parentRouteConfig.createRoute({
+  path: "islands",
+  component: lazy(() => import('./islands-component').then(d => ({
+    default: d.component
+  })))
+});
+export function Islands() {
+  return <main>
       <section>This page is static, but contains some dynamic parts.</section>
       <section>
         Here is a simple counter: <CounterIsland />
@@ -28,7 +29,6 @@ export function Home() {
         </ServerContent>
       </ExpandableIsland>
       <MediaQueryIsland />
-      <Link to="/about">Link to another page</Link>
-    </main>
-  );
+    </main>;
 }
+export { routeConfig };
