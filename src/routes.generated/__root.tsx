@@ -25,7 +25,7 @@ function Root() {
           Islands
         </Link>
       </div>
-      <div className="max-w-xl">
+      <div>
         <Outlet />
       </div>
     </div>;

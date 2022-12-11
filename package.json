@@ -1,11 +1,12 @@
 {
   "name": "my-capri-react-site",
   "private": true,
-  "description": "Capri react example",
+  "description": "Capri with TanStack Router",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "start": "npm run build && npm run preview",
     "dev": "concurrently 'npm:dev:*'",
     "dev:build": "vite dev",
     "dev:generate": "tsr watch",
