@@ -36,7 +36,7 @@ Since we don't want any JavaScript to end up in our static pages, the Router's `
 
 ### Preview and Dev-Mode
 
-In _dev-mode_, or when you visit the `/preview` route in production, the whole site is served as SPA. This makes it super fast to preview changes and allows you have instant live-previews inside a headless CMS, without having to perform a new build every time.
+In _dev-mode_, or when you visit the `/preview` route in production, the whole site is served as SPA. This makes it super fast to preview changes and allows you to have instant live-previews inside a headless CMS, without having to perform a new build every time.
 
 Visit https://capri.build for more details.
 

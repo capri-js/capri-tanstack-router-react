@@ -1,10 +1,7 @@
+import { Link } from "@tanstack/react-router";
+import { A, link } from "../components/Link";
 import logo from "../logo.svg";
-import { A } from "../components/Link";
-import { useRouter } from "@tanstack/react-router";
 function Home() {
-  const {
-    Link
-  } = useRouter();
   return <div className="mx-auto my-10 max-w-md flex flex-col gap-4">
       <div className="flex flex-col items-center">
         <img src={logo} alt="Capri" />
@@ -24,12 +21,7 @@ function Home() {
         <li>🍃 Zero KB of JavaScript shipped to the client</li>
         <li>
           🏝️ Pages with interactive{" "}
-          <A as={Link} to="/islands" search={{}} params={{}}>
-            islands
-          </A>
-          <Link to="/posts/$postId" params={{
-          postId: "10"
-        }}>
+          <Link to="/islands" className={link}>
             islands
           </Link>
         </li>
