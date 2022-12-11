@@ -15,9 +15,10 @@ Clone the repo and run the following commands:
 
 ```
 npm install
-npm run build
-npm run preview
+npm start
 ```
+
+Or `npm run dev` to start in [dev-mode](#preview-and-dev-mode).
 
 ## About this demo
 

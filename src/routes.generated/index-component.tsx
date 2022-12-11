@@ -41,7 +41,7 @@ function Home() {
         </li>
         <li></li>
       </ul>
-      <a href="https://stackblitz.com/github/github/capri-js/capri-tanstack-router-react">
+      <a href="https://stackblitz.com/github/github/capri-js/capri-tanstack-router-react?terminal=start">
         <img alt="Open in StackBlitz" src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" />
       </a>
       <p>
